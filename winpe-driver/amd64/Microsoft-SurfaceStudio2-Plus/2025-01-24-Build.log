@@ -1,0 +1,100 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250124143457
+Username: AzureAD\DavidSegura
+RunAs User: AzureAD\DavidSegura
+Configuration Name: 
+Machine: HPFIREFLY16P (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 29436
+PSVersion: 5.1.26100.2161
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.2161
+BuildVersion: 10.0.26100.2161
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceStudio2-Plus\2025-01-24-Build.log
+[14:34:57] Expanding the contents of  to C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceStudio2-Plus
+[14:36:26] Removed C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceStudio2-Plus\SurfaceStudio2+_Win11_22621_24.121.14499.0.msi
+[14:36:26] Removed SurfaceUpdate content
+audio
+bluetooth
+capabilitylicensingsvcclient
+dax3aposvc
+dax3extrtk
+dax3swchsa
+devicestelemetryservicedriver
+ehdxsstmd3a
+gige64
+graphicsbase
+graphicsext
+hideventfilter
+intcoedoemlibpath
+intel219ethextensionpackage
+managementengineext
+nvmsoaegpu
+RealtekAPO
+realtekapoext
+surfacecfuoverhid
+Surfacedevicestelemetryservicedriver
+surfacedialfilter
+surfaceeeprom
+surfacegpu
+surfaceihvcpusmfclient
+surfaceihvgpupowercontrollerdriver
+surfaceme
+surfaceoempanel
+surfaceoempanelcustomization
+surfacepd0
+surfacepd1
+surfacepen0953firmwareupdate
+surfacepen0c0ffirmwareupdate
+surfacepen217fwupdate
+surfacepowermeter
+surfacepowerstate
+surfacepowertrackercore
+surfaceretimer
+surfacesam
+Surfaceservicenull
+surfacesmf
+surfacestoragefwupdateenum
+surfacestoragefwupdatemzvl21t0hclr00bmv
+surfacestoragefwupdatesdcpnry1t001124
+surfacesystemmanagementframeworkdriver
+surfacesystemtelemetrydriver
+surfacetcon
+surfacethermalpolicy
+surfacethunderbolt4dockfwupdate
+surfacetouch
+surfacetpmnationz
+surfacetpmnuvoton
+surfaceuefi
+wifi08
+[14:36:27] Remaining SurfaceUpdate content:
+intelthcbase
+managementengine
+msu56cx22x64sta
+surfaceacpiplatformextensiondriver
+surfacebutton
+surfacehidfriendlynames
+surfacehidminidriver
+SurfaceHotPlug
+surfaceintegrationdriver
+surfacepen217integration
+surfaceserialhubdriver
+surfacesmfclient
+surfacesmfdisplayclient
+surfacesptclient
+surfacetimealarmacpifilter
+surfaceucmucsihidclient
+surfacevirtualfunctionenum
+tbtslimhostcontroller
+tglchipset
+tglserial
+**********************
+Windows PowerShell transcript end
+End time: 20250124143627
+**********************

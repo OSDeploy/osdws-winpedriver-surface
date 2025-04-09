@@ -1,0 +1,102 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250124121241
+Username: AzureAD\DavidSegura
+RunAs User: AzureAD\DavidSegura
+Configuration Name: 
+Machine: HPFIREFLY16P (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 21380
+PSVersion: 5.1.26100.2161
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.2161
+BuildVersion: 10.0.26100.2161
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceLaptop4-AMD\2025-01-24-Build.log
+[12:12:41] Expanding the contents of  to C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceLaptop4-AMD
+[12:13:02] Removed C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceLaptop4-AMD\SurfaceLaptop4_AMD_Win11_22621_24.103.34403.0.msi
+[12:13:02] Removed SurfaceUpdate content
+amdacpbus
+amddrtm
+amdfendr
+amdgpio2
+amdi2c
+amdlpcfilterdriver
+amdmicropep
+amdpsp
+amdsmf
+amdspi
+amduart
+atihdwt6
+bluetooth
+dax3aposvc
+dax3extrtk
+dax3swchsa
+devicestelemetryservicedriver
+dock2fwupdate
+hdxacpm
+netwtw08
+powertrackercore
+sam
+servicenull
+smbus
+surfacecfuoverhid
+surfacedigitizerhidspiextnpackage
+surfacekip
+surfacelightsensor
+surfaceoempanelamd64
+surfacepd_cyp
+surfacepd_ti
+surfacepen0953cfuoverblelcextnpackage
+surfacepen0953firmwareupdate
+surfacepen217fwupdate
+surfacepenblelcaddradaptation
+surfacepencfuoverblelc
+surfacepowermeter
+surfacesmf
+surfacesmf13in
+surfacestoragefwupdate
+surfacesystemmanagementframework
+surfacesystemtelemetry
+surfacetcon13
+surfacetcon13b
+surfacetcon13c
+surfacetcon13d
+surfacetcon15
+surfacetcon15b
+surfacethermalpolicy
+surfacetouchfw_13
+surfacetouchfw_15
+surfacetouchpenprocessorupdate_13
+surfacetouchpenprocessorupdate_15
+surfacetpm
+surfacetrackpad
+surfaceuefi
+thunderbolt4dockfwupdate
+u0406350
+[12:13:03] Remaining SurfaceUpdate content:
+hotplug
+msu53cx22x64sta
+msu56cx22x64sta
+surfacebattery
+surfacebutton
+surfaceethernetadapter
+surfacehidfriendlynames
+surfacehidmini
+surfaceintegration
+surfacepen217integration
+surfaceserialhub
+surfacesmfclient
+surfacesmfdisplayclient
+surfacetcondriver
+surfacetimealarmacpifilter
+surfaceucmucsihidclient
+surfacevirtualfunctionenum
+**********************
+Windows PowerShell transcript end
+End time: 20250124121303
+**********************

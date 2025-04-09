@@ -1,0 +1,112 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250124140925
+Username: AzureAD\DavidSegura
+RunAs User: AzureAD\DavidSegura
+Configuration Name: 
+Machine: HPFIREFLY16P (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 14608
+PSVersion: 5.1.26100.2161
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.2161
+BuildVersion: 10.0.26100.2161
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfacePro7\2025-01-24-Build.log
+[14:09:25] Expanding the contents of  to C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfacePro7
+[14:10:49] Removed C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfacePro7\SurfacePro7_Win11_22621_24.121.14800.0.msi
+[14:10:49] Removed SurfaceUpdate content
+audiodetectiondriver
+audiosst
+audiosstbus
+bluetooth
+camera
+cameractllogic
+camerasensor5693
+camerasensor5693ext
+camerasupport
+capabilitylicensingsvcclient
+devicestelemetryservicedriver
+dptf
+dptfcpu
+fingerprint
+graphicsext
+hdxsstm2
+hidpciminiport
+iclchipset
+iclchipsetlpss
+iclchipsetnorthpeak
+iclserialiogpio
+iclserialioi2c
+iclserialiospi
+iclserialiouart
+intcoedoemlibpathext
+ishbus
+ishheci
+itouch
+managementengineext
+me
+ov7251
+ov7251extension
+ov8865
+ov8865extension
+realtekext
+realtekhsa
+sam
+sdxsc
+servicenull
+surfaceaccessorydevice
+surfaceaccessoryfwupdate
+surfaceacpinotify
+surfacecfuoverhid
+surfacedock2fwupdateamd64
+surfacekeyboardbacklight
+surfacelightsensor
+surfaceoempanelamd64
+surfacepd
+surfacepen0953cfuoverblelcextnpackage
+surfacepen0953firmwareupdate
+surfacepen0c0fcfuoverblelcextnpackage
+surfacepen0c0ffirmwareupdate
+surfacepen217fwupdate
+surfacepenblelcaddradaptation
+surfacepencfuoverblelcamd64master
+surfacepowerfilter
+surfacepowertrackercore
+surfacepro1725typecoverintegration
+surfacepro4typecoverintegration
+surfacestoragefwupdate
+surfacetouchfw
+surfacetouchpenprocessorupdate
+surfacetpm
+surfacetypecover
+surfacetypecoverv3integration
+surfaceuefi
+thunderbolt4dockfwupdate
+wifi08
+zgraphicsbase
+[14:10:50] Remaining SurfaceUpdate content:
+managementengine
+msu53cx22x64sta
+msu56cx22x64sta
+surfacebattery
+surfacebutton
+surfacecoverclick
+surfacedockintegration
+surfacehidfriendlynames
+surfacehidmini
+surfaceintegration
+surfacepen217integration
+surfacesar
+surfaceserialhub
+surfacetcondriver
+surfaceucmucsihidclient
+surfacevirtualfunctionenum
+**********************
+Windows PowerShell transcript end
+End time: 20250124141050
+**********************

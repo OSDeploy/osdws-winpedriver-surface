@@ -1,0 +1,142 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250124143846
+Username: AzureAD\DavidSegura
+RunAs User: AzureAD\DavidSegura
+Configuration Name: 
+Machine: HPFIREFLY16P (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 32856
+PSVersion: 5.1.26100.2161
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.2161
+BuildVersion: 10.0.26100.2161
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfacePro10\2025-01-24-Build.log
+[14:38:46] Expanding the contents of  to C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfacePro10
+[14:40:01] Removed C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfacePro10\SurfacePro10forBusiness_Win11_22631_24.122.17265.0.msi
+[14:40:01] Removed SurfaceUpdate content
+AccessoryFwUpdate
+aecapoextension
+apoextension
+aposwcinstaller
+AudioSSTBus
+Bluetooth
+Button
+Camera
+CameraCtlLogic
+CameraSensor13858
+CameraSensor13858Ext
+CameraSensorIMX681
+CameraSensorIMX681Ext
+CameraSupport
+CFUOverHid
+CoverClick
+dax3extrtk
+dax3swcaposvc
+dax3swchsa
+devicestelemetryservicedriver
+dock2fwupdate
+dspextension
+ehdxsstmd3a6
+fingerprint
+GraphicsBase
+GraphicsExt
+hidfriendlynames
+iacamera64extension
+iclsClient
+ihvcpusmfclient
+intcbtle
+ivd64
+ivdextn64
+machinelearningservicenull
+ME
+mepcameracomponent
+meteorlakepchssystem
+meteorlakesystem
+microsofteffectpack
+Netwtw6e
+NFCClient
+npu
+nullcapsule
+nxpnfcclientdriverext
+oempanelcustomization
+PD
+pen0c0ffirmwareupdate
+Pen217FWUpdate
+Pen217Integration
+penblelcaddradaptation
+PowerMeter
+powerstate
+PowerTrackerCore
+realtekapo
+realtekapoext
+realtekapowin10
+Retimer
+SAM
+SMF
+storagefwupdateenum
+storagefwupdatehfs001tej3x108n
+storagefwupdatehfs256gej3x108n
+storagefwupdatehfs512gej3x108n
+storagefwupdatemz9l41t0hblb00bmv
+storagefwupdatemz9l4256hcjq00bmv
+storagefwupdatemz9l4512hblu00bmv
+storagefwupdatesddptqd1t001124
+storagefwupdatesddptqd256g1124
+storagefwupdatesddptqd512g1124
+surfaceappcompanionextensionpackage
+surfacehidclasssettingsextensionpackage
+surfaceoobpairingoptinpackage
+surfacetouchpadg7cfuoverhidextnpackage
+Surfacetouchpadsettingsextensionpackage
+SystemManagementFramework
+systemtelemetryusermode
+TCON-ANX
+TCON-NVT
+thermalpolicy
+thunderbolt4dockfwupdate
+touchg6fwupdateextnpackage0c7f
+touchpenprocessor0c7fupdate
+TpmNTC
+typecoverv7fwupdate
+UEFI
+vd55g0
+vd55g0Extension
+VoiceClarityApoSwcInstaller
+[14:40:02] Remaining SurfaceUpdate content:
+acpiplatformextension
+Battery
+DockIntegration
+GNA
+HidMini
+HotPlug
+ialpss2gpio2mtl
+ialpss2i2cmtl
+ialpss2spimtl
+ialpss2uart2mtl
+intcpmt
+Integration
+intelquickspi
+ManagementEngine
+msu53cx22x64sta
+msu56cx22x64sta
+panel
+penwirelesschargerhotkey
+SarManager
+SerialHub
+Service
+SMFClient
+smfdisplayclient
+sptclient
+timealarmacpifilter
+typecoverv7fprude
+UcmUcsiHidClient
+**********************
+Windows PowerShell transcript end
+End time: 20250124144002
+**********************

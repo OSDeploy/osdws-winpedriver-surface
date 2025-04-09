@@ -1,0 +1,193 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250124145346
+Username: AzureAD\DavidSegura
+RunAs User: AzureAD\DavidSegura
+Configuration Name: 
+Machine: HPFIREFLY16P (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 2928
+PSVersion: 5.1.26100.2161
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.2161
+BuildVersion: 10.0.26100.2161
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\DATA\OSDHome\BootImage-Drivers\arm64\Microsoft-SurfacePro9\2025-01-24-Build.log
+[14:53:46] Expanding the contents of  to C:\DATA\OSDHome\BootImage-Drivers\arm64\Microsoft-SurfacePro9
+[14:54:13] Removed C:\DATA\OSDHome\BootImage-Drivers\arm64\Microsoft-SurfacePro9\SurfacePro9-5G_Win11_22621_24.122.16809.0.msi
+[14:54:13] Removed SurfaceUpdate content
+dax3extqc
+dax3swcaposvcarm64
+dax3swchsaarm64
+devicestelemetryservicedriver
+effectspack
+gtopatchdrvumdfext
+mhihost
+msu53cx22arm64sta
+msu56cx22arm64sta
+msuarm64w10
+prodxextarc8280
+proextqctree8280
+qcabd
+qcadc8280
+qcadcm8280
+qcadsprpc8280
+qcadsprpcd8280
+qcaucd8280
+qcaudminiportbase8280
+qcbtaddvscregistry8280
+qcbtfmuarthsp8280
+qccamflash8280
+qccamflashext8280
+qccamisp8280
+qccamispext8280
+qccamjpege8280
+qccammipicsi8280
+qccammipicsiext8280
+qccamplatform8280
+qccdi8280
+qcconnectionsecurity8280
+qcdeepstandbymdm8280
+qcdiagrouter8280
+qcdx8280
+qcfgbcl8280
+qcglink8280
+qcgnss
+qcgpi8280
+qcgpio8280
+qci2c8280
+qciommu
+qciommuext8280
+qcipcc8280
+qcipcrouter8280
+qckmbam8280
+qcmbbfwupdatedriver
+qcmbbnetadapter
+qcpdsr
+qcpepwd8280
+qcpil
+qcpilext8280
+qcpilfilterext
+qcpmic8280
+qcpmicapps8280
+qcpmicext8280
+qcpmicglink8280
+qcpmicgpio8280
+qcppx8280
+qcrpen
+qcscm
+qcsecapp
+qcskext8280
+qcslimbus8280
+qcsmmu8280
+qcsocpartition
+qcsp8280
+qcspi8280
+qcspmi8280
+qcssgservicesumd
+qcsubsys8280
+qcsubsysextcdsp18280
+qcsubsysextspss8280
+qcsubsysthermalmgr
+qcsyscache8280
+qctftpkmdf
+qcthermalmdm
+qctree
+qcuart8280
+qcude
+qcursext
+qcusbcucsi8280
+qcusbfnssfilter8280
+qcwifinotifiersrvc
+qcwlan8280
+qcwlanext8280
+qcwlansleepmgr8280
+qcwwanpowerdown
+qcxhcifilter8280
+qmuxmdm
+qmuxmdmextension
+Surfaceappcompanionextensionpackage
+surfacecamauxsensor8280
+surfacecamauxsensorextension8280
+surfacecamavs8280
+surfacecamavsext8280
+surfacecamfrontsensor8280
+surfacecamfrontsensorextension8280
+surfacecamplatformext8280
+surfacecamrearsensor8280
+surfacecamrearsensorextension8280
+surfacecfuoverhid
+surfacedigitizerwotextnpackage
+surfacedock2fwupdate
+surfaceeeprom
+Surfacehidclasssettingsextensionpackage
+surfaceihvaudiofilterdriver
+surfaceihvcpusmfclient
+surfacenulldriver
+surfaceoempanel
+surfaceoempanelcustomization
+Surfaceoobpairingoptinpackage
+surfacepen0953cfuoverblelcextnpackage
+surfacepen0953firmwareupdate
+surfacepen0c0ffirmwareupdate
+surfacepen217fwupdate
+surfacepenblelcaddradaptation
+surfacepencfuoverblelc
+surfacepowermeter
+surfacepowertrackercore
+surfaceproacsparc8280
+surfaceproaucdextarc8280
+surfaceproaudiominiextarc8280
+surfaceprobtfmuartextswiftpairenable8280
+surfaceproextadsp8280
+surfaceproextcdsp8280
+surfaceprofgbclext8280
+surfaceproi2cextarc8280
+surfacepromiscwlanext
+surfacesam
+surfacesmf
+surfacestoragefwupdateenum
+surfacestoragefwupdatehfm128gd3gx013n
+surfacestoragefwupdatehfm256gd3gx013n
+surfacestoragefwupdatehfm512gd3gx013n
+surfacestoragefwupdatekbg40zns128g
+surfacestoragefwupdatekbg40zns256g
+surfacestoragefwupdatekbg40zns512g
+surfacesystemmanagementframeworkdriver
+surfacesystemtelemetrydriver
+surfacetconcapsule
+surfacethermalpolicy
+surfacethunderbolt4dockfwupdate
+surfacetouchg6fwupdateextnpackage
+Surfacetouchpadg7cfuoverhidextnpackage
+Surfacetouchpadsettingsextensionpackage
+surfacetouchpenprocessorupdate
+surfacetypecoverv7fwupdate
+surfaceuefi
+tools
+wbfusbdriver
+[14:54:14] Remaining SurfaceUpdate content:
+surfacebattery
+surfacebutton
+surfacecoverclick
+surfacehidfriendlynames
+SurfaceHidMini
+surfacehotplug
+surfaceintegrationdriver
+surfacepen217integration
+surfacesar
+surfaceserialhubdriver
+surfaceservicenulldriver
+surfacesmfclient
+surfacetcondriver
+surfacetimealarmacpifilter
+surfacetypecoverv7fprudedriver
+surfaceucmucsihidclient
+**********************
+Windows PowerShell transcript end
+End time: 20250124145414
+**********************

@@ -1,0 +1,137 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250124130610
+Username: AzureAD\DavidSegura
+RunAs User: AzureAD\DavidSegura
+Configuration Name: 
+Machine: HPFIREFLY16P (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 25612
+PSVersion: 5.1.26100.2161
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.2161
+BuildVersion: 10.0.26100.2161
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceLaptopStudio2\2025-01-24-Build.log
+[13:06:10] Expanding the contents of  to C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceLaptopStudio2
+[13:08:00] Removed C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceLaptopStudio2\SurfaceLaptopStudio2_Win11_22621_24.112.17155.0.msi
+[13:08:00] Removed SurfaceUpdate content
+accessoryfwupdate
+alderlakechipset
+AudioSST
+AudioSSTBus
+AudioUSB
+bluetooth
+dax3extrtk
+dax3swcaposvc
+dax3swchsa
+devicestelemetryservicedriver
+gn21x2
+gn21x4
+graphicsbase
+icls
+icpscomponent
+iigdextes
+intelvpu
+mepcameracomponent
+microsofteffectpackextension
+npu
+nvmsoegpu
+RealtekAPO
+realtekapoext
+realtekaudio
+realtek_dolbyoed
+smfdgpu
+smfigpu
+surfacecamera
+surfacecfuoverhid
+surfacedevicemft
+surfacedisplayhardwaredriver
+surfacedock2fwupdate
+surfaceeeprom
+surfaceihvcpusmfclient
+surfaceihvgpupowercontrollerdriver
+surfacemachinelearningservicenulldriver
+surfaceme
+surfaceoempanelcustomization
+surfacepaneldriver
+surfacepd
+surfacepen0953cfuoverblelcextnpackage
+surfacepen0953firmwareupdate
+surfacepen0c0ffirmwareupdate
+surfacepen217fwupdate
+surfacepencfuoverblelc
+surfacepowermeter
+surfacepowerstate
+surfacepowertrackercore
+surfacerender_apo
+surfacerender_ext
+surfaceretimer
+surfacesam
+surfacesmfvpuclient
+surfacestoragefwupdateenum
+SurfaceStorageFwUpdateHFS001TEJ9X101N
+SurfaceStorageFwUpdateHFS002TEJ9X101N
+surfacestoragefwupdatekbg50zns512g
+surfaceStorageFwUpdateKXG80ZNV1T02
+surfaceStorageFwUpdateKXG80ZNV2T04
+surfacestoragefwupdatemz9l4512hblu00bmv
+surfacestoragefwupdatemzvl21t0hclr00bmv
+surfacestoragefwupdatemzvl22t0hblb00bmv
+surfacestoragefwupdatesdcpnry1t001124
+surfaceStorageFwUpdateSDCPNRZ2T001124
+surfaceStorageFwUpdateSDDPTQD512G1124
+surfacesystemmanagementframeworkdriver
+surfacesystemtelemetryusermode
+surfacetcon
+surfacethermalpolicy
+surfacethunderbolt4dockfwupdate
+surfacetouchcfu
+surfacetouchmw
+surfacetrackpadcfu
+surfacetrackpadmw
+surfacevoca_apo
+surfacevoca_ext
+surfacewlc
+tpmnuvoton
+uefi
+wifi6e
+wn21x4
+[13:08:01] Remaining SurfaceUpdate content:
+adl-rplserialLPSS
+cardreader
+gna
+heci
+intelquickspi
+msu53cx22x64sta
+realtekEthernet
+surfaceacpiplatformextension
+surfacebattery
+surfacebutton
+surfacedockintegration
+surfacehidfriendlynames
+surfacehidminidriver
+surfacehotplug
+surfaceintegrationdriver
+surfacepen217integration
+surfacepenblelcaddradaptationdriver
+surfacepenwirelesschargerhotkey
+surfacesarmanager
+surfaceserialhub
+surfaceservicenulldriver
+surfacesmfclient
+surfacesmfdisplayclient
+surfacesptclient
+surfacetimealarmacpifilter
+surfaceucmucsihidclient
+surfacevirtualfunctionenum
+surfacewakeontouchcontrol
+wotquickspiextensionport1
+**********************
+Windows PowerShell transcript end
+End time: 20250124130801
+**********************

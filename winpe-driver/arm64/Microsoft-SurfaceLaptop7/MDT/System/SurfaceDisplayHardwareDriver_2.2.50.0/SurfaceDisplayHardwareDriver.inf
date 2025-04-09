@@ -1,0 +1,138 @@
+; File:               SurfaceDisplayHardwareDriver.inf
+;
+; Description:        SurfaceDisplayHardwareDriver
+;
+; Copyright (C) 2022 Microsoft Corporation.  All Rights Reserved.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Version]
+Signature="$Windows NT$"
+Class=System
+ClassGuid={4D36E97D-E325-11CE-BFC1-08002BE10318}
+Provider=%ManufacturerName%
+CatalogFile=SurfaceDisplayHardwareDriver.cat
+DriverVer = 06/27/2024,2.2.50.0
+PnPLockDown=1
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+SurfaceDisplayHardwareDriver.dll=1,,
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[Manufacturer]
+%ManufacturerName%=SurfaceDisplayHardware,NTARM64.10.0...17763, NTARM64.10.0...22000
+
+[SurfaceDisplayHardware.NTARM64.10.0...17763]
+; TODO Currenty using the ACPI node as as Tcon driver
+%DeviceName%=SurfaceDisplayHardware_Install_Win10, ACPI\MSHW0125
+%DeviceName%=SurfaceDisplayHardware_Install_Win10, ACPI\MSHW0380
+
+[SurfaceDisplayHardware.NTARM64.10.0...22000]
+; TODO Currenty using the ACPI node as as Tcon driver
+%DeviceName%=SurfaceDisplayHardware_Install_Win11, ACPI\MSHW0125
+%DeviceName%=SurfaceDisplayHardware_Install_Win11, ACPI\MSHW0380
+
+
+[SurfaceDisplayHardware_Install_Win11.NT]
+Include=WUDFRD.inf
+Needs=WUDFRD.NT
+CopyFiles=SurfaceDisplayHardwareDriver_CopyFiles
+
+[SurfaceDisplayHardware_Install_Win10.NT]
+CopyFiles=SurfaceDisplayHardwareDriver_CopyFiles
+
+[SurfaceDisplayHardware_Install_Win10.NT.hw]
+AddReg=SurfaceDisplayHardware_AddReg
+
+[SurfaceDisplayHardware_Install_Win11.NT.hw]
+Include=WUDFRD.inf
+Needs=WUDFRD.NT.HW
+AddReg=SurfaceDisplayHardware_AddReg
+
+[SurfaceDisplayHardware_Install_Win11.NT.Services]
+Include=WUDFRD.inf
+Needs=WUDFRD.NT.Services
+
+[SurfaceDisplayHardware_Install_Win10.NT.Services]
+AddService=WUDFRD,0x000001fa,WUDFRD_ServiceInstall
+
+[SurfaceDisplayHardware_Install_Win10.NT.Wdf]
+UmdfService=SurfaceDisplayHardware,SurfaceDisplayHardware_Install_Win10
+UmdfServiceOrder=SurfaceDisplayHardware
+UmdfKernelModeClientPolicy=AllowKernelModeClients
+UmdfFsContextUsePolicy=CanUseFsContext2
+UmdfMethodNeitherAction=Copy
+UmdfFileObjectPolicy=AllowNullAndUnknownFileObjects
+UmdfHostProcessSharing=ProcessSharingDisabled
+
+[SurfaceDisplayHardware_Install_Win11.NT.Wdf]
+UmdfService=SurfaceDisplayHardware,SurfaceDisplayHardware_Install_Win11
+UmdfServiceOrder=SurfaceDisplayHardware
+UmdfKernelModeClientPolicy=AllowKernelModeClients
+UmdfFsContextUsePolicy=CanUseFsContext2
+UmdfMethodNeitherAction=Copy
+UmdfFileObjectPolicy=AllowNullAndUnknownFileObjects
+UmdfHostProcessSharing=ProcessSharingDisabled
+
+[SurfaceDisplayHardware_Install_Win10]
+UmdfLibraryVersion=2.15.0
+ServiceBinary=%13%\SurfaceDisplayHardwareDriver.dll
+
+[SurfaceDisplayHardware_Install_Win11]
+UmdfLibraryVersion=2.15.0
+ServiceBinary=%13%\SurfaceDisplayHardwareDriver.dll
+
+[SurfaceDisplayHardware_AddReg]
+; Add WdfDirectedPowerTransitionEnable registry key to opt into Directed Fx
+; From MSDN https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/introduction-to-the-directed-power-management-framework#requirements-for-wdf-non-miniport-drivers
+HKR,"WDF","WdfDirectedPowerTransitionEnable",0x00010001,1
+
+[SurfaceDisplayHardwareDriver_CopyFiles]
+SurfaceDisplayHardwareDriver.dll
+
+[SurfaceDisplayHardware_Install_Win10.NT.Events]
+AddEventProvider = {C55D6B1B-9B7E-47AA-9305-0D73C2C257D2},SurfaceDisplayHardware_EventProviderInstall
+
+[SurfaceDisplayHardware_Install_Win11.NT.Events]
+AddEventProvider = {C55D6B1B-9B7E-47AA-9305-0D73C2C257D2},SurfaceDisplayHardware_EventProviderInstall
+
+[SurfaceDisplayHardware_EventProviderInstall]
+ProviderName=Microsoft-Surface-SurfaceDisplayHardware
+ResourceFile=%13%\SurfaceDisplayHardwareDriver.dll
+AddChannel= Microsoft-Surface-SurfaceDisplayHardware/Operational,0x2,SurfaceDisplayHardware_ChannelInstall
+
+[SurfaceDisplayHardware_ChannelInstall]
+Isolation         = 1
+Enabled           = 1
+
+[WUDFRD_ServiceInstall]
+DisplayName = %WudfRdDisplayName%
+ServiceType = %SERVICE_KERNEL_DRIVER%
+StartType = %SERVICE_DEMAND_START%
+ErrorControl = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\WUDFRd.sys
+StartName = \Driver\WudfRd
+
+[Strings]
+ManufacturerName="Surface"
+DiskName = "SurfaceDisplayHardwareDriver Driver Installation Disk"
+WudfRdDisplayName="Windows Driver Foundation - User-mode Driver Framework Reflector"
+DeviceName="Surface Display Hardware Driver"
+
+; non-localizable
+SPSVCINST_ASSOCSERVICE= 0x00000002
+SERVICE_KERNEL_DRIVER = 1
+SERVICE_BOOT_START    = 0
+SERVICE_SYSTEM_START  = 1
+SERVICE_AUTO_START    = 2
+SERVICE_DEMAND_START  = 3
+SERVICE_ERROR_NORMAL  = 1
+SERVICE_ERROR_IGNORE  = 0
+SERVICE_WIN32_SHARE_PROCESS = 0x00000020
+
+;; eof: SurfaceDisplayHardwareDriver.inx
+;;

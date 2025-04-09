@@ -1,0 +1,112 @@
+;
+; SurfaceIhvCpuSmfClient.inf
+;
+; Copyright (C) 2015 Microsoft Corporation.  All Rights Reserved.
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=SurfaceSystemManagement
+ClassGuid={DB07C471-C4AD-46D0-AFFF-06B56A65CCF4}
+Provider=%VENDOR%
+CatalogFile=SurfaceIhvCpuSmfClient.cat
+DriverVer = 06/21/2024,1.174.15.0
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+; ================= Class section =====================
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+SurfaceIhvCpuSmfClient.sys=1,,
+
+; ========== Class definition ===========
+ 
+[ClassInstall32]
+AddReg = ClassInstall_AddReg
+ 
+[ClassInstall_AddReg]
+HKR,,,,%ClassName%
+HKR,,NoInstallClass,,1
+HKR,,IconPath,%REG_MULTI_SZ%,"%%systemroot%%\system32\setupapi.dll,-27"
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%VENDOR%=Vendor,NTARM64.10.0...19041
+
+[Vendor.NTARM64.10.0...19041]
+%SurfaceIhvCpuSmfClientIntel%		=SurfaceIhvCpuSmfClient.Inst,  {80499AFE-C9B5-4EF5-A3C9-B2D6304832D3}\SurfaceSmfIcelakeClient
+%SurfaceIhvCpuSmfClientIntel%		=SurfaceIhvCpuSmfClient.Inst,  {80499AFE-C9B5-4EF5-A3C9-B2D6304832D3}\SurfaceSmfTigerlakeClient
+%SurfaceIhvCpuSmfClientIntel%		=SurfaceIhvCpuSmfClient.Inst,  {80499AFE-C9B5-4EF5-A3C9-B2D6304832D3}\SurfaceSmfGeminilakeClient
+%SurfaceIhvCpuSmfClientIntel%		=SurfaceIhvCpuSmfClient.Inst,  {80499AFE-C9B5-4EF5-A3C9-B2D6304832D3}\SurfaceSmfAlderlakeClient
+%SurfaceIhvCpuSmfClientIntel%		=SurfaceIhvCpuSmfClient.Inst,  {80499AFE-C9B5-4EF5-A3C9-B2D6304832D3}\SurfaceSmfRaptorlakeClient
+%SurfaceIhvCpuSmfClientIntel%		=SurfaceIhvCpuSmfClient.Inst,  {80499AFE-C9B5-4EF5-A3C9-B2D6304832D3}\SurfaceSmfMeteorlakeClient
+%SurfaceIhvCpuSmfClientQualcomm%	=SurfaceIhvCpuSmfClient.Inst,  {80499AFE-C9B5-4EF5-A3C9-B2D6304832D3}\SurfaceSmf8280Client
+%SurfaceIhvCpuSmfClientQualcomm%	=SurfaceIhvCpuSmfClient.Inst,  {80499AFE-C9B5-4EF5-A3C9-B2D6304832D3}\SurfaceSmf8380Client
+%SurfaceIhvCpuSmfClientQualcomm%	=SurfaceIhvCpuSmfClient.Inst,  {80499AFE-C9B5-4EF5-A3C9-B2D6304832D3}\MSHW0650
+%SurfaceIhvCpuSmfClientIntel%		=SurfaceIhvCpuSmfClient.Inst,  ACPI\MSHW0301
+
+[SurfaceIhvCpuSmfClient.Inst.NT]
+CopyFiles = Drivers_Dir
+
+;-------------- Service installation
+
+[SurfaceIhvCpuSmfClient.Inst.NT.Services]
+AddService = SurfaceIhvCpuSmfClient,%SERVICE_DEMAND_START%,SurfaceIhvCpuSmfClient_Service_Inst
+
+;-------------- Event installation
+[SurfaceIhvCpuSmfClient.Inst.NT.Events]
+AddEventProvider = {32760E2C-4AC2-40EB-9972-1C69C12ED757},SurfaceIhvCpuSmfClient_EventProviderInstall
+
+[Drivers_Dir]
+SurfaceIhvCpuSmfClient.sys
+
+[SurfaceIhvCpuSmfClient_Service_Inst]
+DisplayName    = %SurfaceIhvCpuSmfClientService%
+ServiceType    = %SERVICE_KERNEL_DRIVER% 
+StartType      = %SERVICE_DEMAND_START% 
+ErrorControl   = %SERVICE_ERROR_NORMAL% 
+ServiceBinary  = %13%\SurfaceIhvCpuSmfClient.sys 
+
+[SurfaceIhvCpuSmfClient_EventProviderInstall]
+ProviderName=Microsoft-Surface-SmfCpuClientDriver
+ResourceFile=%13%\SurfaceIhvCpuSmfClient.sys
+MessageFile=%13%\SurfaceIhvCpuSmfClient.sys
+AddChannel= Microsoft-Surface-SurfaceIhvCpuSmfClient/Operational,0x2,SurfaceIhvCpuSmfClient_ChannelInstall
+ImportChannel=System
+
+[SurfaceIhvCpuSmfClient_ChannelInstall]
+Isolation         = 2
+Enabled           = 1
+
+[Strings] 
+VENDOR="Surface"
+SurfaceIhvCpuSmfClientIntel="Surface SMF CPU Client Driver"
+SurfaceIhvCpuSmfClientQualcomm = "Surface SMF CPU Client Driver"
+SurfaceIhvCpuSmfClientService = "Surface SMF CPU Client Driver"
+DiskName = "Surface SMF CPU Client Driver Installation Disk"
+ClassName = "Surface System Management"
+
+SERVICE_BOOT_START     = 0x0 
+SERVICE_SYSTEM_START   = 0x1 
+SERVICE_AUTO_START     = 0x2 
+SERVICE_DEMAND_START   = 0x3 
+SERVICE_DISABLED       = 0x4 
+
+SERVICE_KERNEL_DRIVER  = 0x1 
+SERVICE_ERROR_IGNORE   = 0x0 
+SERVICE_ERROR_NORMAL   = 0x1 
+SERVICE_ERROR_SEVERE   = 0x2 
+SERVICE_ERROR_CRITICAL = 0x3 
+
+REG_EXPAND_SZ          = 0x00020000 
+REG_DWORD              = 0x00010001 
+REG_MULTI_SZ           = 0x00010000
+REG_BINARY             = 0x00000001
+REG_SZ                 = 0x00000000

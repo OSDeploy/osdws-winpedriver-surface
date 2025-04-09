@@ -1,0 +1,100 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250124115838
+Username: AzureAD\DavidSegura
+RunAs User: AzureAD\DavidSegura
+Configuration Name: 
+Machine: HPFIREFLY16P (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 24824
+PSVersion: 5.1.26100.2161
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.2161
+BuildVersion: 10.0.26100.2161
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceGo4\2025-01-24-Build.log
+[11:58:38] Expanding the contents of  to C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceGo4
+[11:59:34] Removed C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceGo4\SurfaceGo4_Win11_22621_24.102.23115.0.msi
+[11:59:34] Removed SurfaceUpdate content
+alderlakepchnsystem
+alderlakepchnsystemish
+audiosst
+AudioUSB
+bluetooth
+BxtAudio
+cameradriver
+CapabilityLicensingSvcClient
+dax3aposvc
+dax3extrtk
+eccapsule
+ehdxsstmd3a3
+graphicsbase
+graphicsext
+hideventfilter
+hidpciminiport
+ialpss2gpio2adln
+ialpss2i2cadln
+ialpss2spiadln
+ialpss2uart2adln
+intcoedoemlibpath
+ishbus
+ishheci
+mecapsule
+nfcclient
+pdcapsule
+smfcapsule
+surfacecaptureapoextension
+surfacecaptureaposwcinstaller
+surfacecfuoverhid
+Surfacedevicestelemetryservicedriver
+surfacedock2fwupdate
+surfaceihvcpusmfclient
+surfaceoempanel
+surfaceoempanelcustomization
+surfacepen0953firmwareupdate
+surfacepen217fwupdate
+surfacepowermeter
+surfacepowerstate
+surfacepowertrackercore
+surfacestoragefwupdateenum
+surfacestoragefwupdatehn8g962ehkx03764g
+surfacestoragefwupdatehn8t05dehkx073
+surfacestoragefwupdatehn8t15dehkx075256g
+surfacestoragefwupdatekludg4uhgcb0e1
+surfacestoragefwupdateklueg4rhgbb0e1256g
+surfacestoragefwupdatethgaf8g9t43bairb64g
+surfacestoragefwupdatethgjfat0t44
+surfacestoragefwupdatethgjfgt1e45baipb256g
+surfacesystemmanagementframework
+surfacesystemtelemetryusermode
+surfacethermalpolicy
+surfacethunderbolt4dockfwupdate
+touchcapsule
+tpmcapsule_nu
+tpmcapsule_nz
+ueficapsule
+usbcardreader
+wifi08
+[11:59:35] Remaining SurfaceUpdate content:
+gna
+managementengine
+msu53cx22x64sta
+msu56cx22x64sta
+surfaceacpiplatformextensiondriver
+surfacebattery
+surfacehidfriendlynames
+surfacehotplug
+surfaceintegrationdriver
+SurfacePen217Integration
+surfaceservicenulldriver
+surfacesmfclient
+surfacesmfdisplayclient
+surfacevirtualfunctionenum
+**********************
+Windows PowerShell transcript end
+End time: 20250124115935
+**********************

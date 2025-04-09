@@ -1,0 +1,139 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250124142946
+Username: AzureAD\DavidSegura
+RunAs User: AzureAD\DavidSegura
+Configuration Name: 
+Machine: HPFIREFLY16P (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 13244
+PSVersion: 5.1.26100.2161
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.2161
+BuildVersion: 10.0.26100.2161
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfacePro8\2025-01-24-Build.log
+[14:29:46] Expanding the contents of  to C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfacePro8
+[14:30:53] Removed C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfacePro8\SurfacePro8_Win11_22621_24.103.32167.0.msi
+[14:30:53] Removed SurfaceUpdate content
+audiosst
+audiosstbus
+audiousb
+bluetooth
+bxtaudio
+capabilitylicensingsvcclient
+dax3aposvc
+dax3extrtk
+dax3swchsa
+devicestelemetryservicedriver
+ehdxsstmd3a2
+fingerprint
+gtopatchdrvumdfext
+hdxsstmd3a2
+iacamera64
+iacamera64extension
+iactrllogic64
+iaisp64
+ihvcpusmfclient
+iigdextlc
+me
+ov13858
+ov5693
+powertrackercore
+quectelfwupdatedriver
+quectelgnsssensor
+sam
+servicenull
+surfaceaccessoryfwupdate
+surfaceapoextension
+surfaceaposwcinstaller
+Surfaceappcompanionextensionpackage
+surfacecfuoverhid
+surfacedock2fwupdateamd64
+surfacedspextension
+surfaceeeprom
+Surfacehidclasssettingsextensionpackage
+surfaceoempanel
+surfaceoempanelcustomization
+Surfaceoobpairingoptinpackage
+Surfaceov13858extension
+Surfaceov5693extension
+surfacepd
+surfacepen0953cfuoverblelcextnpackage
+surfacepen0953firmwareupdate
+surfacepen0c0fcfuoverblelcextnpackage
+surfacepen0c0ffirmwareupdate
+surfacepen217fwupdate
+surfacepenblelcaddradaptation
+surfacepencfuoverblelc
+surfacepowermeter
+surfaceretimer
+surfacesmflte
+surfacesmfwifi
+surfacestoragefwupdateenum
+surfacestoragefwupdatehfm001td3gx013n
+surfacestoragefwupdatehfm128gd3gx013n
+surfacestoragefwupdatehfm256gd3gx013n
+surfacestoragefwupdatehfm512gd3gx013n
+surfacestoragefwupdatekbg40zns128g
+surfacestoragefwupdatekbg40zns1t02
+surfacestoragefwupdatekbg40zns256g
+surfacestoragefwupdatekbg40zns512g
+surfacestoragefwupdatemz9lq128hbhq00000
+surfacestoragefwupdatemz9lq1t0halb00000
+surfacestoragefwupdatemz9lq256hbjq00000
+surfacestoragefwupdatemz9lq512halu00000
+surfacesystemmanagementframework
+surfacesystemtelemetry
+surfacetcon_a
+surfacetcon_b
+surfacethermalpolicy
+surfacetouchg6fwupdateextnpackage
+Surfacetouchpadg7cfuoverhidextnpackage
+Surfacetouchpadsettingsextensionpackage
+surfacetouchpenprocessorupdate
+surfacetpm_ntc
+surfacetpm_ntz
+surfacetypecoverv7fwupdate
+surfaceuefi_pq
+Surfacevd55g0extension
+thunderbolt4dockfwupdate
+uefi
+vd55g0
+wifi08
+zgraphicsbase
+[14:30:54] Remaining SurfaceUpdate content:
+hotplug
+intelthcbase
+managementengine
+msu53cx22x64sta
+msu56cx22x64sta
+surfaceacpiplatformextension
+surfacebattery
+surfacebutton
+surfacecoverclick
+surfaceethernetadapter
+surfacehidfriendlynames
+surfacehidmini
+surfaceintegration
+surfacepen217integration
+surfacepenwirelesschargerhotkey
+surfacesar
+surfaceserialhub
+surfacesmfclient
+surfacesmfdisplayclient
+surfacetimealarmacpifilter
+surfacetypecoverv7fprude
+surfaceucmucsihidclient
+surfacevirtualfunctionenum
+tbtslimhostcontroller
+tglchipset
+tglserial
+**********************
+Windows PowerShell transcript end
+End time: 20250124143054
+**********************

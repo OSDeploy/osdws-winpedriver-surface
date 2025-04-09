@@ -1,0 +1,111 @@
+; File:               SurfaceSarManager.inf
+;
+; Description:        SurfaceSarManager
+;
+; Copyright (C) 2015 Microsoft Corporation.  All Rights Reserved.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Version]
+Signature="$Windows NT$"
+Class=System
+ClassGuid={4D36E97D-E325-11CE-BFC1-08002BE10318}
+Provider=%ManufacturerName%
+CatalogFile=SurfaceSarManager.cat
+DriverVer = 06/08/2024,3.1193.4.0
+PnPLockDown=1
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+SurfaceSarManager.dll=1
+
+[Manufacturer]
+%ManufacturerName%=Standard, NTARM64.10.0...17763, NTARM64.10.0...22000
+
+[Standard.NTARM64.10.0...17763]
+%DeviceName%=SurfaceSarManager_WIN10, {98DE32A9-5D44-419E-B67D-66072BCEF58B}\SurfaceSarManager	; For Win10 RS5 and after
+
+[Standard.NTARM64.10.0...22000]
+%DeviceName%=SurfaceSarManager_WIN11, {98DE32A9-5D44-419E-B67D-66072BCEF58B}\SurfaceSarManager	; For Win11 and after
+
+[SurfaceSarManager_WIN10.NT]
+CopyFiles=UserModeDriverCopy
+
+[SurfaceSarManager_WIN10.NT.hw]
+AddReg=SurfaceSarManager_AddReg
+
+[SurfaceSarManager_WIN10.NT.Services]
+AddService=WUDFRd,0x000001fa,WUDFRD_ServiceInstall
+
+[SurfaceSarManager_WIN10.NT.Wdf]
+UmdfService=SurfaceSarManager,SurfaceSarManager_Install
+UmdfServiceOrder=SurfaceSarManager
+UmdfKernelModeClientPolicy=AllowKernelModeClients
+UmdfMethodNeitherAction=Copy
+UmdfFileObjectPolicy=AllowNullAndUnknownFileObjects
+UmdfHostProcessSharing=ProcessSharingDisabled
+
+
+[SurfaceSarManager_WIN11.NT]
+Include=WUDFRD.inf
+Needs=WUDFRD.NT
+CopyFiles=UserModeDriverCopy
+
+[SurfaceSarManager_WIN11.NT.hw]
+Include=WUDFRD.inf
+Needs=WUDFRD.NT.hw
+AddReg=SurfaceSarManager_AddReg
+
+[SurfaceSarManager_WIN11.NT.Services]
+Include=WUDFRD.inf
+Needs=WUDFRD.NT.Services
+
+[SurfaceSarManager_WIN11.NT.Wdf]
+UmdfService=SurfaceSarManager,SurfaceSarManager_Install
+UmdfServiceOrder=SurfaceSarManager
+UmdfKernelModeClientPolicy=AllowKernelModeClients
+UmdfMethodNeitherAction=Copy
+UmdfFileObjectPolicy=AllowNullAndUnknownFileObjects
+UmdfHostProcessSharing=ProcessSharingDisabled
+
+[SurfaceSarManager_Install]
+UmdfLibraryVersion=2.15.0
+ServiceBinary=%13%\SurfaceSarManager.dll
+
+[WUDFRD_ServiceInstall]
+DisplayName = %WudfRdDisplayName%
+ServiceType  = %SERVICE_KERNEL_DRIVER%
+StartType    = %SERVICE_DEMAND_START%
+ErrorControl = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\WUDFRd.sys
+StartName = \Driver\WudfRd
+
+[SurfaceSarManager_AddReg]
+HKR,,Security,,"D:P(A;;GA;;;SY)(A;;GA;;;BA)(A;;GA;;;LS)" ;Allow generic all access to system, built-in Admin, and Local System.
+
+[DestinationDirs]
+UserModeDriverCopy=13
+
+[UserModeDriverCopy]
+SurfaceSarManager.dll
+
+[Strings]
+ManufacturerName="Surface"
+DiskName = "SurfaceSarManager driver Installation Disk"
+WudfRdDisplayName="Windows Driver Foundation - User-mode Driver Framework Reflector"
+DeviceName="Surface Radio Monitor"
+
+; non-localizable
+SPSVCINST_ASSOCSERVICE= 0x00000002
+SERVICE_KERNEL_DRIVER = 1
+SERVICE_BOOT_START    = 0
+SERVICE_SYSTEM_START  = 1
+SERVICE_AUTO_START    = 2
+SERVICE_DEMAND_START  = 3
+SERVICE_ERROR_NORMAL  = 1
+SERVICE_ERROR_IGNORE  = 0
+SERVICE_WIN32_SHARE_PROCESS = 0x00000020
+
+;; eof: SurfaceSarManager.inx
+;;

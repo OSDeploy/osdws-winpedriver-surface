@@ -1,0 +1,128 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250124123852
+Username: AzureAD\DavidSegura
+RunAs User: AzureAD\DavidSegura
+Configuration Name: 
+Machine: HPFIREFLY16P (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 25500
+PSVersion: 5.1.26100.2161
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.2161
+BuildVersion: 10.0.26100.2161
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceLaptop6\2025-01-24-Build.log
+[12:38:52] Expanding the contents of  to C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceLaptop6
+[12:40:01] Removed C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceLaptop6\SurfaceLaptop6forBusiness_Win11_22631_25.010.3035.0.msi
+[12:40:01] Removed SurfaceUpdate content
+bluetoothgfp
+dax3extrtk
+dax3swcaposvc
+dax3swchsa
+devicestelemetryservicedriver
+dspextension
+GraphicsBase
+iclsclient
+iigdextai
+intcbtle
+intelsst
+ivd64
+ivdextn64
+kip
+mecapsule
+mepcameracomponent
+meteorlakepchssystem
+meteorlakesystem
+microsofteffectpack
+Netwtw6e
+npu
+pd13
+pd15
+realtekaudio
+retimer
+sam
+smf13
+smf15
+storagefwupdateenum
+storagefwupdatehfs001tej3x108n
+storagefwupdatehfs256gej3x108n
+storagefwupdatehfs512gej3x108n
+storagefwupdatemz9l41t0hblb00bmv
+storagefwupdatemz9l4256hcjq00bmv
+storagefwupdatemz9l4512hblu00bmv
+storagefwupdatesddptqd1t001124
+storagefwupdatesddptqd256g1124
+storagefwupdatesddptqd512g1124
+surfaceaccessoryfwupdate
+surfaceaecapoextension
+surfaceapoextension
+surfaceaposwcinstaller
+surfacecfuoverhid
+surfacedevicemft
+surfacedisplayhardwaredriver
+surfacedock2fwupdate
+surfaceihvcpusmfclient
+surfacemachinelearningservicenulldriver
+surfaceoempanelcustomization
+surfacepen0c0ffirmwareupdate
+surfacepen217fwupdate
+surfacepowermeter
+surfacepowerstate
+surfacepowertrackercore
+surfacesystemmanagementframeworkdriver
+surfacesystemtelemetrydriverusermode
+surfacethermalpolicy
+surfacethunderbolt4dockfwupdate
+Tcon_13LXSemiconCF1
+Tcon_13RaydiumCF1
+Tcon_13RaydiumCF2
+Tcon_15LXSemicon
+Tcon_15Raydium
+touchg6fwupdateextnpackage0c88
+touchg6fwupdateextnpackage0c89
+tpadelan
+tpadsynaptics
+tpm
+ueficapsule
+voiceclarityaposwcinstaller
+[12:40:02] Remaining SurfaceUpdate content:
+gna
+ialpss2gpio2mtl
+ialpss2i2cmtl
+ialpss2spimtl
+ialpss2uart2mtl
+intcpmt
+intelquickspi
+managementengine
+msu53cx22x64sta
+msu56cx22x64sta
+surfaceacpiplatformextension
+surfacebattery
+surfacebutton
+surfacedockintegration
+surfacehidfriendlynames
+surfacehidminidriverwinre
+surfacehotplug
+surfaceintegrationdriver
+surfacepanel
+surfacepen217integration
+surfacepenblelcaddradaptationdriver
+surfaceserialhub
+surfaceservicenulldriver
+surfacesmfclient
+surfacesmfdisplayclient
+surfacesptclient
+surfacetimealarmacpifilter
+surfacetouchpenprocessor0c88update
+surfacetouchpenprocessor0c89update
+surfaceucmucsihidclient
+tbtslimhostcontroller
+**********************
+Windows PowerShell transcript end
+End time: 20250124124002
+**********************

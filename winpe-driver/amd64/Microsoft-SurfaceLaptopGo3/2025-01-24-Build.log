@@ -1,0 +1,111 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250124125047
+Username: AzureAD\DavidSegura
+RunAs User: AzureAD\DavidSegura
+Configuration Name: 
+Machine: HPFIREFLY16P (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 4480
+PSVersion: 5.1.26100.2161
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.2161
+BuildVersion: 10.0.26100.2161
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceLaptopGo3\2025-01-24-Build.log
+[12:50:47] Expanding the contents of  to C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceLaptopGo3
+[12:51:40] Removed C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceLaptopGo3\SurfaceLaptopGo3_Win11_22621_24.113.35946.0.msi
+[12:51:40] Removed SurfaceUpdate content
+audiosst
+AudioUSB
+bluetooth
+BxtAudio
+CapabilityLicensingSvcClient
+dax3aposvc
+dax3extrtk
+devicestelemetryservicedriver
+ehdxsstmd3a3
+elanhiddevicefriendlynames
+ElanWbfUsbDriver
+graphicsbase
+iigdextgl
+intcoedoemlibpath
+ish
+ishbusdriver
+RealtekAPO
+realtekapoext
+realtekdfu
+surfaceaecapoextension
+surfaceals
+surfacecaptureaposwcinstaller
+surfacecfuoverhid
+surfacedock2fwupdate
+surfacedockfwupdate
+surfaceihvcpusmfclient
+surfaceihvfprfwupdate
+surfacekeyboard
+SurfaceME
+surfaceoempanel
+surfaceoempanelcustomization
+surfacepd
+surfacepd-ti
+surfacepowermeter
+surfacepowerstate
+surfacepowertrackercore
+surfacesam
+surfacesmf
+surfacestoragefwupdateenum
+surfacestoragefwupdatehn8t05dehkx073
+surfacestoragefwupdatekbg50zns256g
+surfacestoragefwupdatekbg50zns512g
+surfacestoragefwupdatekludg4uhgcb0e1
+surfacestoragefwupdatemz9l4256hcjq00bmv
+surfacestoragefwupdatemz9l4512hblu00bmv
+surfacestoragefwupdatesddptqd256g1124
+surfacestoragefwupdatesddptqd512g1124
+surfacestoragefwupdatethgjfat0t44
+surfacesystemmanagementframeworkdriver
+surfacesystemtelemetryusermode
+surfacetconcapsule
+surfacethermalpolicy
+surfacethunderbolt4dockfwupdate
+surfacetouch
+surfacetpm_nationz
+surfacetpm_nuvoton
+surfacetrackpad
+surfaceuefi
+wbfusbdriver
+wifi08
+wifidrv10customizations
+[12:51:40] Remaining SurfaceUpdate content:
+adlserial
+alderlakepchpsystem
+alderlakesystem
+gna
+managementengine
+msu53cx22x64sta
+msu56cx22x64sta
+surfaceacpiplatformextensiondriver
+surfacebattery
+surfacebutton
+surfacedockintegration
+surfacehidfriendlynames
+surfacehidminidriver
+surfacehotplug
+surfaceintegrationdriver
+surfacesarmanager
+surfaceserialhub
+surfaceservicenulldriver
+surfacesmfclient
+surfacesmfdisplayclient
+surfacesptclient
+surfacetimealarmacpifilter
+surfaceucmucsihidclient
+**********************
+Windows PowerShell transcript end
+End time: 20250124125140
+**********************

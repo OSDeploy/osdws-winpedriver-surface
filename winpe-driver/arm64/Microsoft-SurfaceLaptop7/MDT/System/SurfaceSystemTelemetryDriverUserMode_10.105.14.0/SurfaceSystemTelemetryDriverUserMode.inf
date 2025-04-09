@@ -1,0 +1,132 @@
+; File:               SurfaceSystemTelemetryDriverUserMode.inf
+;
+; Description:        SurfaceSystemTelemetryDriverUserMode
+;
+; Copyright (C) 2015 Microsoft Corporation.  All Rights Reserved.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Version]
+Signature="$Windows NT$"
+Class=System
+ClassGuid={4D36E97D-E325-11CE-BFC1-08002BE10318}
+Provider=%ManufacturerName%
+CatalogFile=SurfaceSystemTelemetryDriverUserMode.cat
+DriverVer = 06/18/2024,10.105.14.0
+PnPLockDown=1
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+SurfaceSystemTelemetryDriverUserMode.dll=1
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTARM64.10.0...17763, NTARM64.10.0...22000
+
+[Standard.NTARM64.10.0...17763]
+; Load on ACPI node MSHW0309 or be loaded by SID dynamically
+;
+%DeviceName%=SurfaceSystemTelemetryDriverUserMode_W10, ACPI\MSHW0309
+%DeviceName%=SurfaceSystemTelemetryDriverUserMode_W10, {46D68EA0-8B35-45CE-8238-B84DBDF4E77A}\SurfaceSystemTelemetryDriver
+
+[Standard.NTARM64.10.0...22000]
+; Load on ACPI node MSHW0309 or be loaded by SID dynamically
+;
+%DeviceName%=SurfaceSystemTelemetryDriverUserMode_W11, ACPI\MSHW0309
+%DeviceName%=SurfaceSystemTelemetryDriverUserMode_W11, {46D68EA0-8B35-45CE-8238-B84DBDF4E77A}\SurfaceSystemTelemetryDriver
+
+[SurfaceSystemTelemetryDriverUserMode_W10.NT]
+CopyFiles=UserModeDriverCopy
+
+[SurfaceSystemTelemetryDriverUserMode_W11.NT]
+Include=WUDFRD.inf
+Needs=WUDFRD.NT
+CopyFiles=UserModeDriverCopy
+
+[SurfaceSystemTelemetryDriverUserMode_W10.NT.HW]
+AddReg=SurfaceSystemTelemetryDriverUserMode_AddReg
+
+[SurfaceSystemTelemetryDriverUserMode_W11.NT.hw]
+Include=WUDFRD.inf
+Needs=WUDFRD.NT.HW
+AddReg=SurfaceSystemTelemetryDriverUserMode_AddReg
+
+[SurfaceSystemTelemetryDriverUserMode_W10.NT.Events]
+AddEventProvider = {FD325C17-372E-40D1-8388-1BE314CB816A},SurfaceSystemTelemetryDriverUserMode_EventProviderInstall
+
+[SurfaceSystemTelemetryDriverUserMode_W11.NT.Events]
+AddEventProvider = {FD325C17-372E-40D1-8388-1BE314CB816A},SurfaceSystemTelemetryDriverUserMode_EventProviderInstall
+
+[SurfaceSystemTelemetryDriverUserMode_EventProviderInstall]
+ProviderName=Microsoft-Surface-SurfaceSystemTelemetryDriver
+ResourceFile=%13%\SurfaceSystemTelemetryDriverUserMode.dll
+MessageFile=%13%\SurfaceSystemTelemetryDriverUserMode.dll
+AddChannel= Microsoft-Surface-SurfaceSystemTelemetryDriver/Operational,0x2,SurfaceSystemTelemetryDriverUserMode_ChannelInstall
+
+[SurfaceSystemTelemetryDriverUserMode_ChannelInstall]
+Isolation         = 2
+Enabled           = 1
+
+[SurfaceSystemTelemetryDriverUserMode_W10.NT.Services]
+AddService=WUDFRd,0x000001fa,WUDFRD_ServiceInstall
+
+[SurfaceSystemTelemetryDriverUserMode_W11.NT.Services]
+Include=WUDFRD.inf
+Needs=WUDFRD.NT.Services
+
+[SurfaceSystemTelemetryDriverUserMode_W10.NT.Wdf]
+UmdfService=SurfaceSystemTelemetryDriverUm,SurfaceSystemTelemetryDriverUserMode_Install
+UmdfServiceOrder=SurfaceSystemTelemetryDriverUm
+UmdfKernelModeClientPolicy=AllowKernelModeClients
+UmdfMethodNeitherAction=Copy
+UmdfFileObjectPolicy=AllowNullAndUnknownFileObjects
+
+[SurfaceSystemTelemetryDriverUserMode_W11.NT.Wdf]
+UmdfService=SurfaceSystemTelemetryDriverUm,SurfaceSystemTelemetryDriverUserMode_Install
+UmdfServiceOrder=SurfaceSystemTelemetryDriverUm
+UmdfKernelModeClientPolicy=AllowKernelModeClients
+UmdfMethodNeitherAction=Copy
+UmdfFileObjectPolicy=AllowNullAndUnknownFileObjects
+
+[SurfaceSystemTelemetryDriverUserMode_Install]
+UmdfLibraryVersion=2.15.0
+ServiceBinary=%13%\SurfaceSystemTelemetryDriverUserMode.dll
+
+[SurfaceSystemTelemetryDriverUserMode_AddReg]
+; Allow access to system, administrators group, and user-mode drivers
+HKR, , Security, , "D:P(A;;GA;;;SY)(A;;GA;;;BA)(A;;GA;;;UD)"
+
+[WUDFRD_ServiceInstall]
+DisplayName = %SurfaceSystemTelemetry%
+ServiceType  = %SERVICE_KERNEL_DRIVER%
+StartType    = %SERVICE_DEMAND_START%
+ErrorControl = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\WUDFRd.sys
+StartName = \Driver\WudfRd
+
+[DestinationDirs]
+UserModeDriverCopy=13 ; copy to driverstore
+
+[UserModeDriverCopy]
+SurfaceSystemTelemetryDriverUserMode.dll
+
+[Strings]
+ManufacturerName="Surface"
+DiskName = "SurfaceSystemTelemetryDriver Driver Installation Disk"
+WudfRdDisplayName="Windows Driver Foundation - User-mode Driver Framework Reflector"
+DeviceName="Surface System Telemetry Driver"
+SurfaceSystemTelemetry="Surface System Telemetry Driver"
+
+; non-localizable
+SPSVCINST_ASSOCSERVICE= 0x00000002
+SERVICE_KERNEL_DRIVER = 1
+SERVICE_BOOT_START    = 0
+SERVICE_SYSTEM_START  = 1
+SERVICE_AUTO_START    = 2
+SERVICE_DEMAND_START  = 3
+SERVICE_ERROR_NORMAL  = 1
+SERVICE_ERROR_IGNORE  = 0
+SERVICE_WIN32_SHARE_PROCESS = 0x00000020
+
+;; eof: SurfaceSystemTelemetryDriverUserMode.inx
+;;

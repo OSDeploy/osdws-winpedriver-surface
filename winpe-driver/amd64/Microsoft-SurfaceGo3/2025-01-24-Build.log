@@ -1,0 +1,103 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250124113305
+Username: AzureAD\DavidSegura
+RunAs User: AzureAD\DavidSegura
+Configuration Name: 
+Machine: HPFIREFLY16P (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 23772
+PSVersion: 5.1.26100.2161
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.2161
+BuildVersion: 10.0.26100.2161
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceGo3\2025-01-24-Build.log
+[11:33:05] Expanding the contents of  to C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceGo3
+[11:34:13] Removed C:\DATA\OSDHome\BootImage-Drivers\amd64\Microsoft-SurfaceGo3\SurfaceGo3_Win11_22621_24.103.29945.0.msi
+[11:34:13] Removed SurfaceUpdate content
+audiodetectiondriver
+audiosst
+audiosstbus
+bluetooth
+camera
+cameracsi2host
+cameractllogic
+camerasensor5693
+camerasensor7251
+camerasensor8865
+camerasupport
+capabilitylicensingsvcclient
+dax3aposvc
+dax3extdolbyaudiopremium
+devicestelemetryservicedriver
+EHDXSSTMD3A
+gps
+gpsmuxusb
+gpsmux_lte
+gtopatchdrvumdfext
+hdxsstmd3a
+hideventfilter
+hidpciminiport
+iigdextal
+ish
+ishbus
+ishheci
+kblchipset
+mobilebroadband
+nfcclient
+panelcalibration
+piecomponent
+pieextension
+qmuxwinusb
+RealtekAPO
+RealtekApoExt
+RealtekAPOWin10
+realtekext
+serialiogpio
+serialioi2c
+serialiouart
+spchipset
+spchipsetthermal
+surfacecfuoverhid
+surfacedisplaycolor
+surfacedock2fwupdateamd64
+surfaceec
+surfaceihvcpusmfclient
+surfaceintegration_lte
+surfaceme
+surfacepd
+surfacepen0953firmwareupdate
+surfacepen217fwupdate
+surfacepowertrackercore
+surfaceservice
+surfacesmf
+surfacesystemmanagementframework
+surfacesystemtelemetry
+surfacethermalpolicy
+surfacethunderbolt4dockfwupdate
+surfacetouch
+surfacetpm_ntc
+surfacetpm_ntz
+uefi
+usbcardreader
+wifi08
+zgraphicsbase
+[11:34:13] Remaining SurfaceUpdate content:
+managementengine
+msu53cx22x64sta
+msu56cx22x64sta
+surfacebattery
+surfaceethernetadapter
+surfacehotplug
+surfacepen217integration
+surfacesmfclient
+surfacesmfdisplayclient
+**********************
+Windows PowerShell transcript end
+End time: 20250124113413
+**********************
