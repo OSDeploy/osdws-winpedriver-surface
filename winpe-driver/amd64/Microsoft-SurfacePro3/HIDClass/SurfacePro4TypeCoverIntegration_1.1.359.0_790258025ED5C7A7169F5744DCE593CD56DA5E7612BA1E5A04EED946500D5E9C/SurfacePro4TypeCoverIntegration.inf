@@ -1,0 +1,98 @@
+;
+; SurfacePro4TypeCoverIntegration.inf
+;
+; Copyright (c) Microsoft Corporation. All rights reserved
+;
+
+[Version]
+Signature="$Windows NT$"
+ClassGuid={745a17a0-74d3-11d0-b6fe-00a0c90f57da}
+Class=HIDClass
+Provider=%ManufacturerName%
+CatalogFile=SurfacePro4TypeCoverIntegration.cat
+PnPLockDown=1
+
+DriverVer=08/18/2015,1.1.359.0
+
+[DestinationDirs]
+DefaultDestDir   = 12
+;
+; Driver information
+;
+;************************************************************
+; Install Section
+;************************************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64
+
+[Standard.NTamd64]
+%SurfacePro4TypeCoverIntegration.DeviceDesc% = SurfacePro4TypeCoverIntegration, HID\VID_045E&PID_07E4&MI_00&Col04
+%SurfacePro4TypeCoverIntegration.DeviceDesc% = SurfacePro4TypeCoverIntegration, HID\VID_045E&PID_07E5&MI_00&Col04
+
+%SurfacePro4TypeCoverIntegration.DeviceDesc% = SurfacePro4TypeCoverIntegration, HID\VID_045E&PID_07E8&Col04
+%SurfacePro4TypeCoverIntegration.DeviceDesc% = SurfacePro4TypeCoverIntegration, HID\VID_045E&PID_07E9&Col04
+
+
+;************************************************************
+; General installation section
+;************************************************************
+[SurfacePro4TypeCoverIntegration.NT]
+CopyFiles=SurfacePro4TypeCoverIntegration.CopyFiles
+
+;************************************************************
+; File sections
+;************************************************************
+[SurfacePro4TypeCoverIntegration.CopyFiles]
+SurfacePro4TypeCoverIntegration.sys
+
+;************************************************************
+; Service Installation
+;************************************************************
+[SurfacePro4TypeCoverIntegration.NT.Services]
+AddService = SurfacePro4TypeCoverIntegration, 0x000001f8, SurfacePro4TypeCoverIntegration_Service_Inst
+AddService = ,%SPSVCINST_ASSOCSERVICE% ; null service install
+
+[SurfacePro4TypeCoverIntegration.NT.HW]
+; Add as device upper filter
+AddReg = SurfacePro4TypeCoverIntegration.HW.AddReg
+
+[SurfacePro4TypeCoverIntegration_Service_Inst]
+DisplayName    = %SurfacePro4TypeCoverIntegration.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+ServiceBinary  = %12%\SurfacePro4TypeCoverIntegration.sys
+
+[SurfacePro4TypeCoverIntegration.HW.AddReg]
+HKR,,"UpperFilters",0x00010008,"SurfacePro4TypeCoverIntegration"
+
+;************************************************************
+; Source file information
+;************************************************************
+
+[SourceDisksNames]
+1 = %DiskId1%,,,
+
+[SourceDisksFiles]
+SurfacePro4TypeCoverIntegration.sys = 1,,
+
+;************************************************************
+; Strings
+;************************************************************
+
+[Strings]
+;
+; Non-Localizable Strings
+;
+SERVICEROOT    = "System\CurrentControlSet\Services"
+SPSVCINST_ASSOCSERVICE= 0x00000002
+REG_DWORD=0x00010001
+
+;
+; Localizable Strings
+;
+DiskId1="SurfacePro4TypeCoverIntegration Installation Disk"
+SurfacePro4TypeCoverIntegration.DeviceDesc = "Surface Pro 4 Type Cover Integration"
+SurfacePro4TypeCoverIntegration.SvcDesc = "Surface Pro 4 Type Cover Integration Service"
+ManufacturerName="Microsoft"

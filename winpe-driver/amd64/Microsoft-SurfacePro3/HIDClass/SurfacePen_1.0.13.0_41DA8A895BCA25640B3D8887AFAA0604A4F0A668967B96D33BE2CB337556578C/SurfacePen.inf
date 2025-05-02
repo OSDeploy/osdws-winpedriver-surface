@@ -1,0 +1,59 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; SurfacePen.inf
+;
+; Copyright (C) 2014 Microsoft Corporation.  All Rights Reserved.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = HIDClass
+ClassGuid   = {745a17a0-74d3-11d0-b6fe-00a0c90f57da}
+Provider    = %ManufacturerName%
+DriverVer   = 06/03/2014, 1.0.13.0
+CatalogFile = SurfacePen.cat
+PnpLockdown = 1
+
+[ControlFlags]
+ExcludeFromSelect   = *
+
+[Manufacturer]
+%ManufacturerName% = Standard,NTamd64
+
+[Standard.NTamd64]
+%SurfacePen.DeviceDesc% = SurfacePen, BTHLEDevice\{00001812-0000-1000-8000-00805f9b34fb}_Dev_VID&02045e_PID&07c5
+
+[SurfacePen.NT]
+include = hidbthle.inf
+needs = HidBthLE.NT
+
+[SurfacePen.NT.HW]
+Include = hidbthle.inf
+Needs   = HidbthLE.NT.HW, SurfacePen_HW
+
+[SurfacePen_HW]
+AddReg = SurfacePen_AddReg
+
+[SurfacePen.NT.Services]
+include = hidbthle.inf
+needs = HidBthLE.NT.Services
+
+
+[SurfacePen_AddReg]
+HKR,,"ConnectionLatency",            0x00010001, 0x00
+HKR,,"LinkSupervisionTimeout",       0x00010001, 0x32     ;500.00 ms 
+
+; ================= WDF section =====================
+
+[SurfacePen.NT.CoInstallers]
+include = hidbthle.inf
+needs = HidBthLE.NT.CoInstallers
+
+
+[SurfacePen.NT.Wdf]
+include = hidbthle.inf
+needs = HidbthLE.NT.Wdf
+
+; =================== Generic ==================================
+
+[Strings]
+ManufacturerName="Microsoft"
+SurfacePen.DeviceDesc = "Surface Pen"

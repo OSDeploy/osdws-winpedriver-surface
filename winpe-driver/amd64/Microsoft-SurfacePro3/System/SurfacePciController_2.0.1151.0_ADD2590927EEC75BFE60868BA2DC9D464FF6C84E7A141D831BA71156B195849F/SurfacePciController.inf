@@ -1,0 +1,95 @@
+;
+; SurfacePciController.inf
+;
+; Copyright (C) 2014 Microsoft Corporation.  All Rights Reserved.
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4D36E97D-E325-11CE-BFC1-08002BE10318}
+Provider=%ManufacturerName%
+CatalogFile=SurfacePciController.cat
+DriverVer=09/27/2014,2.0.1151.0
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+SurfacePciController.sys  = 1,,
+WdfCoInstaller01011.dll = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64
+
+[Standard.NTamd64]
+%SurfacePciController.DeviceDesc%=SurfacePciController_Device, PCI\VEN_8086&DEV_9C14&SUBSYS_9C141414
+
+[SurfacePciController_Device.NT]
+Include=machine.inf
+Needs=PCI_DRV
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+SurfacePciController.sys
+
+[SurfacePciController_Device.NT.HW]
+Include = machine.inf
+Needs   = PCI_DRV.HW
+AddReg = SurfacePciController_Device.NT.HW.AddReg
+
+[SurfacePciController_Device.NT.HW.AddReg]  
+HKR,,"UpperFilters",0x00010000,"SurfacePciController"
+
+;-------------- Service installation
+[SurfacePciController_Device.NT.Services]
+Include    = machine.inf
+Needs      = PCI_DRV.Services
+AddService = SurfacePciController, 0, SurfacePciController_Service_Inst
+
+; -------------- SurfacePciController driver install sections
+[SurfacePciController_Service_Inst]
+DisplayName    = %SurfacePciController.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\SurfacePciController.sys
+LoadOrderGroup = PnP Filter
+
+;
+;--- SurfacePciController_Device Coinstaller installation ------
+;
+
+[DestinationDirs]
+SurfacePciController_Device_CoInstaller_CopyFiles = 11
+
+[SurfacePciController_Device.NT.CoInstallers]
+AddReg=SurfacePciController_Device_CoInstaller_AddReg
+CopyFiles=SurfacePciController_Device_CoInstaller_CopyFiles
+
+[SurfacePciController_Device_CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller01011.dll,WdfCoInstaller"
+
+[SurfacePciController_Device_CoInstaller_CopyFiles]
+WdfCoInstaller01011.dll
+
+[SourceDisksFiles]
+WdfCoInstaller01011.dll=1 ; make sure the number matches with SourceDisksNames
+
+[SurfacePciController_Device.NT.Wdf]
+KmdfService =  SurfacePciController, SurfacePciController_wdfsect
+[SurfacePciController_wdfsect]
+KmdfLibraryVersion = 1.11
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="Microsoft" 
+DiskName = "SurfacePciController Installation Disk"
+SurfacePciController.DeviceDesc = "Intel(R) 8 Series PCI Express Root Port #3 - 9C14"
+SurfacePciController.SVCDESC = "SurfacePciController"

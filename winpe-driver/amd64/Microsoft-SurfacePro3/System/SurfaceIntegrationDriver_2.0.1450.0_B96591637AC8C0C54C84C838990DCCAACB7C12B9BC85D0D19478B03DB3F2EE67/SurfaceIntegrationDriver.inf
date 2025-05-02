@@ -1,0 +1,70 @@
+;
+; SurfaceIntegrationDriver.inf
+;
+; Copyright (C) 2014 Microsoft Corporation.  All Rights Reserved.
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4D36E97D-E325-11CE-BFC1-08002BE10318}
+Provider=%ManufacturerName%
+CatalogFile=SurfaceIntegrationDriver.cat
+DriverVer = 01/07/2019,2.0.1450.0
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+; ================= Class section =====================
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+SurfaceIntegrationDriver.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64
+
+[Standard.NTamd64]
+%SurfaceIntegrationDriver.DeviceDesc%=SurfaceIntegrationDriver_Device, ACPI\MSHW0009 
+
+[SurfaceIntegrationDriver_Device.NT]
+CopyFiles=Drivers_Dir
+AddReg=SurfaceIntegrationDriver_Device_AddReg
+
+[Drivers_Dir]
+SurfaceIntegrationDriver.sys
+
+[SurfaceIntegrationDriver_Device.NT.HW]
+
+[SurfaceIntegrationDriver_Device_AddReg]
+HKLM,SYSTEM\CurrentControlSet\Services\StorAHCI\Parameters\Device,"NoIdleD3",%REG_MULTI_SZ_APPEND%,"*"
+HKLM,SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\381b4222-f694-41f0-9685-ff5bb260df2e\e73a048d-bf27-4f12-9731-8b2076e8891f\1e133d45-a325-48da-8769-14ae6dc1170b,"ACSettingIndex",0x00010001,0x00000064
+HKLM,SYSTEM\CurrentControlSet\Control\Power\User\Default\PowerSchemes\381b4222-f694-41f0-9685-ff5bb260df2e\e73a048d-bf27-4f12-9731-8b2076e8891f\1e133d45-a325-48da-8769-14ae6dc1170b,"ACSettingIndex",0x00010001,0x00000064
+
+;-------------- Service installation
+[SurfaceIntegrationDriver_Device.NT.Services]
+;
+; %SPSVCINST_ASSOCSERVICE% should only be specificed if this is a function driver.
+;
+AddService = SurfaceIntegrationDriver,%SPSVCINST_ASSOCSERVICE%, SurfaceIntegrationDriver_Service_Inst
+
+; -------------- SurfaceIntegrationDriver driver install sections
+[SurfaceIntegrationDriver_Service_Inst]
+DisplayName    = %SurfaceIntegrationDriver.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\SurfaceIntegrationDriver.sys
+
+[Strings]
+REG_MULTI_SZ_APPEND =0x10008
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="Surface"
+DiskName = "Surface Integration Driver Installation Disk"
+SurfaceIntegrationDriver.DeviceDesc = "Surface Integration"
+SurfaceIntegrationDriver.SVCDESC = "Surface Integration Driver"

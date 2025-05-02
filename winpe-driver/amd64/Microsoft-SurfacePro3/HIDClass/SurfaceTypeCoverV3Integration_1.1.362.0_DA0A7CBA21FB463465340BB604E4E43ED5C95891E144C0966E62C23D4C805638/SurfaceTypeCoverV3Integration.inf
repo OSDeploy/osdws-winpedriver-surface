@@ -1,0 +1,98 @@
+;
+; SurfaceTypeCoverV3Integration.inf
+;
+; Copyright (c) Microsoft Corporation. All rights reserved
+;
+
+[Version]
+Signature="$Windows NT$"
+ClassGuid={745a17a0-74d3-11d0-b6fe-00a0c90f57da}
+Class=HIDClass
+Provider=%ManufacturerName%
+CatalogFile=SurfaceTypeCoverV3Integration.cat
+PnPLockDown=1
+
+DriverVer=08/20/2015,1.1.362.0
+
+[DestinationDirs]
+DefaultDestDir   = 12
+;
+; Driver information
+;
+;************************************************************
+; Install Section
+;************************************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64
+
+[Standard.NTamd64]
+%SurfaceTypeCoverV3Integration.DeviceDesc% = SurfaceTypeCoverV3Integration, HID\VID_045E&PID_07DC&Col04
+%SurfaceTypeCoverV3Integration.DeviceDesc% = SurfaceTypeCoverV3Integration, HID\VID_045E&PID_07DD&Col04
+%SurfaceTypeCoverV3Integration.DeviceDesc% = SurfaceTypeCoverV3Integration, HID\VID_045E&PID_07E2&Col04
+%SurfaceTypeCoverV3Integration.DeviceDesc% = SurfaceTypeCoverV3Integration, HID\VID_045E&PID_07E3&Col04
+
+
+;************************************************************
+; General installation section
+;************************************************************
+[SurfaceTypeCoverV3Integration.NT]
+CopyFiles=SurfaceTypeCoverV3Integration.CopyFiles
+
+
+;************************************************************
+; File sections
+;************************************************************
+[SurfaceTypeCoverV3Integration.CopyFiles]
+SurfaceTypeCoverV3Integration.sys
+
+;************************************************************
+; Service Installation
+;************************************************************
+[SurfaceTypeCoverV3Integration.NT.Services]
+AddService = SurfaceTypeCoverV3Integration, 0x000001f8, SurfaceTypeCoverV3Integration_Service_Inst
+AddService = ,%SPSVCINST_ASSOCSERVICE% ; null service install
+
+[SurfaceTypeCoverV3Integration.NT.HW]
+; Add as device upper filter
+AddReg = SurfaceTypeCoverV3Integration.HW.AddReg
+
+[SurfaceTypeCoverV3Integration_Service_Inst]
+DisplayName    = %SurfaceTypeCoverV3Integration.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+ServiceBinary  = %12%\SurfaceTypeCoverV3Integration.sys
+
+[SurfaceTypeCoverV3Integration.HW.AddReg]
+HKR,,"UpperFilters",0x00010008,"SurfaceTypeCoverV3Integration"
+
+
+;************************************************************
+; Source file information
+;************************************************************
+
+[SourceDisksNames]
+1 = %DiskId1%,,,
+
+[SourceDisksFiles]
+SurfaceTypeCoverV3Integration.sys = 1,,
+
+;************************************************************
+; Strings
+;************************************************************
+
+[Strings]
+;
+; Non-Localizable Strings
+;
+SERVICEROOT    = "System\CurrentControlSet\Services"
+SPSVCINST_ASSOCSERVICE= 0x00000002
+
+;
+; Localizable Strings
+;
+DiskId1="SurfaceTypeCoverV3Integration Installation Disk"
+SurfaceTypeCoverV3Integration.DeviceDesc = "Surface Type Cover Integration"
+SurfaceTypeCoverV3Integration.SvcDesc = "Surface Type Cover Integration Service"
+ManufacturerName="Microsoft"

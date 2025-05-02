@@ -1,0 +1,67 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; File:          SurfaceCapacitiveHomeButton.inf
+;
+; Description:   Driver Installation file.
+;
+; Copyright (C) 2014 Microsoft Corporation.  All Rights Reserved.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4D36E97D-E325-11CE-BFC1-08002BE10318}
+Provider=%ManufacturerName%
+CatalogFile=SurfaceCapacitiveHomeButton.cat
+DriverVer=11/25/2014,2.0.1179.0
+PnpLockdown=1 
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+SurfaceCapacitiveHomeButton.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64
+
+[Standard.NTamd64]
+%SurfaceCapacitiveHomeButton.DeviceDesc%=SurfaceCapacitiveHomeButton_Device, ACPI\MSHW0028
+
+[SurfaceCapacitiveHomeButton_Device.NT]
+CopyFiles=Drivers_Dir
+Reboot
+
+[Drivers_Dir]
+SurfaceCapacitiveHomeButton.sys
+
+[SurfaceCapacitiveHomeButton_Device.NT.HW]
+AddReg=SetSecurityRegkey
+
+[SetSecurityRegkey]
+HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"
+
+;-------------- Service installation
+[SurfaceCapacitiveHomeButton_Device.NT.Services]
+AddService = SurfaceCapacitiveHomeButton,%SPSVCINST_ASSOCSERVICE%, SurfaceCapacitiveHomeButton_Service_Inst
+
+; -------------- SurfaceCapacitiveHomeButton driver install sections
+[SurfaceCapacitiveHomeButton_Service_Inst]
+DisplayName    = %SurfaceCapacitiveHomeButton.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\SurfaceCapacitiveHomeButton.sys
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="Microsoft"
+DiskName = "Surface Home Button Installation Disk"
+SurfaceCapacitiveHomeButton.DeviceDesc = "Surface Home Button"
+SurfaceCapacitiveHomeButton.SVCDESC = "Surface Home Button Service"

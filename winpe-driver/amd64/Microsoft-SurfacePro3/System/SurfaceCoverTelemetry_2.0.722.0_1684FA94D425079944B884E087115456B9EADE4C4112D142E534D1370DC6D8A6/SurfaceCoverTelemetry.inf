@@ -1,0 +1,89 @@
+;
+; SurfaceCoverTelemetry.inf
+;
+; Copyright (c) Microsoft Corporation. All rights reserved
+;
+[Version]
+Signature="$Windows NT$"
+Class=System;
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=%ManufacturerName%
+CatalogFile=SurfaceCoverTelemetry.cat
+PnpLockdown=1
+DriverVer=04/13/2014,2.0.722.0
+
+;************************************************************
+; Install Section
+;************************************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64.6.3,NTamd64
+
+[Standard.NTamd64]
+; empty %DeviceName%=SurfaceCoverTelemetry, ACPI\MSHW0027
+
+[Standard.NTamd64.6.3]
+%DeviceName%=SurfaceCoverTelemetry, ACPI\MSHW0027
+
+
+;************************************************************
+; General installation section
+;************************************************************
+[SurfaceCoverTelemetry.NT]
+CopyFiles=SurfaceCoverTelemetry.CopyFiles.6.3
+
+;************************************************************
+; Service Installation
+;************************************************************
+[SurfaceCoverTelemetry.NT.Services]
+AddService=WUDFRd,0x000001fa,WUDFRD_ServiceInstall.6.3
+
+[SurfaceCoverTelemetry.NT.CoInstallers]
+CopyFiles=CoInstallers_CopyFiles
+AddReg=CoInstallers_AddReg
+
+[SurfaceCoverTelemetry.NT.Wdf]
+UmdfService=SurfaceCoverTelemetry,SurfaceCoverTelemetry_Install.6.3
+UmdfServiceOrder=SurfaceCoverTelemetry
+UmdfImpersonationLevel=Impersonation
+
+[SurfaceCoverTelemetry_Install.6.3]
+UmdfLibraryVersion=2.0.0 
+ServiceBinary=%12%\UMDF\SurfaceCoverTelemetry.dll
+
+
+[WUDFRD_ServiceInstall.6.3]
+DisplayName     = %WudfRdDisplayName%
+ServiceType     = 1
+StartType       = 3
+ErrorControl    = 1
+ServiceBinary   = %12%\WUDFRd.sys
+
+[CoInstallers_CopyFiles]
+
+[CoInstallers_AddReg]
+HKR,,CoInstallers32,0x00010000,WUDFCoInstaller.dll
+
+[DestinationDirs]
+SurfaceCoverTelemetry.CopyFiles.6.3 = 12,UMDF
+
+[SurfaceCoverTelemetry.CopyFiles.6.3]
+SurfaceCoverTelemetry.dll
+
+;************************************************************
+; Source file information
+;************************************************************
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+SurfaceCoverTelemetry.dll = 1
+
+; =================== Generic ==================================
+
+[Strings]
+ManufacturerName="Microsoft"
+DiskName = "Surface Cover Telemetry Installation Disk"
+WudfRdDisplayName="Windows Driver Foundation - User-mode Driver Framework Reflector"
+DeviceName="Surface Cover Telemetry"
