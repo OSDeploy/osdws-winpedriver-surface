@@ -12,17 +12,3 @@
   * https://www.microsoft.com/en-us/download/details.aspx?id=101315
 
 ---
-
-```text
-Version:
-1.0
-
-Date Published:
-1/24/2025
-
-File Name:
-SurfaceBook3_Win11_22621_25.011.11996.0.msi
-
-File Size:
-1.6 GB
-```
